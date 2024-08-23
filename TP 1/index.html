@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El camino del filósofo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .historia {
+            margin: 20px 0;
+        }
+        .opcion {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>El camino del filósofo</h1>
+    <div id="juego">
+        <div id="inicio" class="historia">
+            <p>Te encuentras en la antigua Atenas, y eres Sócrates, el famoso filósofo. Te has ganado tanto admiradores como enemigos debido a tu forma única de cuestionar todo. Hoy es un día crucial en tu vida.</p>
+            <button class="opcion" onclick="elegirOpcion('opcion1')">Ir al Ágora para debatir con los ciudadanos.</button>
+            <button class="opcion" onclick="elegirOpcion('opcion2')">Pasear por la ciudad y meditar en soledad.</button>
+        </div>
+
+        <div id="opcion1" class="historia" style="display: none;">
+            <p>En el Ágora, encuentras a varios ciudadanos discutiendo sobre la justicia. Decides intervenir.</p>
+            <button class="opcion" onclick="elegirOpcion('opcion1A')">Cuestionar su definición de justicia.</button>
+            <button class="opcion" onclick="elegirOpcion('opcion1B')">Escuchar sus argumentos en silencio.</button>
+        </div>
+
+        <div id="opcion1A" class="historia" style="display: none;">
+            <p>Tu cuestionamiento pone nerviosos a algunos ciudadanos. Uno de ellos, ofendido, te acusa de corromper a los jóvenes y te lleva ante el tribunal.</p>
+            <button class="opcion" onclick="elegirOpcion('juicio')">Aceptar tu destino y defenderte en el tribunal.</button>
+        </div>
+
+        <div id="opcion1B" class="historia" style="display: none;">
+            <p>Tu silencio hace que los ciudadanos te miren con desconfianza. Deciden ignorarte, y te vas sin conseguir nada.</p>
+            <button class="opcion" onclick="elegirOpcion('final1')">Regresar a casa reflexionando sobre el fracaso.</button>
+        </div>
+
+        <div id="opcion2" class="historia" style="display: none;">
+            <p>Durante tu paseo, te encuentras con un joven llamado Platón. Él parece intrigado por tu filosofía.</p>
+            <button class="opcion" onclick="elegirOpcion('opcion2A')">Invitar a Platón a seguir caminando y conversando.</button>
+            <button class="opcion" onclick="elegirOpcion('opcion2B')">Despedirte de Platón y continuar tu paseo en solitario.</button>
+        </div>
+
+        <div id="opcion2A" class="historia" style="display: none;">
+            <p>Platón se convierte en tu discípulo más fiel, y juntos desarrollan grandes ideas filosóficas que perdurarán por siglos.</p>
+            <button class="opcion" onclick="elegirOpcion('final2')">Celebrar tu éxito filosófico.</button>
+        </div>
+
+        <div id="opcion2B" class="historia" style="display: none;">
+            <p>En tu soledad, llegas a profundas reflexiones sobre la vida y la muerte, pero nadie está ahí para escucharlas.</p>
+            <button class="opcion" onclick="elegirOpcion('final3')">Aceptar la soledad como parte del destino del filósofo.</button>
+        </div>
+
+        <div id="juicio" class="historia" style="display: none;">
+            <p>En el tribunal, defiendes tus acciones con pasión, pero los jueces no están convencidos. Te condenan a beber cicuta.</p>
+            <button class="opcion" onclick="elegirOpcion('final4')">Aceptar tu destino con dignidad y beber la cicuta.</button>
+        </div>
+
+        <div id="final1" class="historia" style="display: none;">
+            <p>Regresas a casa, sintiendo que has fallado en tu misión. Reflexionas sobre tus decisiones y sobre lo que podrías haber hecho diferente.</p>
+            <button class="opcion" onclick="reiniciarJuego()">Reiniciar aventura</button>
+        </div>
+
+        <div id="final2" class="historia" style="display: none;">
+            <p>Tu legado filosófico perdura a través de Platón y otros discípulos. Has logrado cambiar el curso de la historia con tus enseñanzas.</p>
+            <button class="opcion" onclick="reiniciarJuego()">Reiniciar aventura</button>
+        </div>
+
+        <div id="final3" class="historia" style="display: none;">
+            <p>Te das cuenta de que la vida del filósofo a veces está llena de soledad. Aceptas este destino con serenidad y continúas buscando la verdad.</p>
+            <button class="opcion" onclick="reiniciarJuego()">Reiniciar aventura</button>
+        </div>
+
+        <div id="final4" class="historia" style="display: none;">
+            <p>Bebes la cicuta y mueres con dignidad, siendo recordado como un mártir de la filosofía. Tu muerte inspira a muchos a seguir tus enseñanzas.</p>
+            <button class="opcion" onclick="reiniciarJuego()">Reiniciar aventura</button>
+        </div>
+    </div>
+
+    <script>
+        function elegirOpcion(opcionId) {
+            document.querySelectorAll('.historia').forEach(function(historia) {
+                historia.style.display = 'none';
+            });
+            document.getElementById(opcionId).style.display = 'block';
+        }
+
+        function reiniciarJuego() {
+            document.querySelectorAll('.historia').forEach(function(historia) {
+                historia.style.display = 'none';
+            });
+            document.getElementById('inicio').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fandom El Señor de los Anillos</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="encabezado">
+        <h1 class="logo">Fandom de El Señor de los Anillos</h1>
+    </header>
+
+    <main class="principal">
+        <section class="seccion">
+            <h2 class="titulo-seccion">¿Primera vez? Registrate!</h2>
+            <form id="formulario-registro" class="formulario" action="https://formspree.io/f/mdoqqzrq" method="POST">
+                <div class="grupo-formulario">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" name="correo" required>
+                </div>
+                <div class="grupo-formulario">
+                    <label for="contraseña">Contraseña:</label>
+                    <input type="password" id="contraseña" name="contraseña" required>
+                </div>
+                <button type="submit" class="boton">Registrarse</button>
+            </form>
+        </section>
+    </main>
+
+    <div class="contenedor-imagen">
+        <img src="imagenes/comunidad.png" alt="Comunidad" class="comunidad-del-anillo">
+    </div>
+</body>
+</html>
